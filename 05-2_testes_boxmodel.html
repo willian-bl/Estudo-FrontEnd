@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Classes CSS</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Willian">
+        <meta name="description" content="Estudos de HTML5, CSS e JavaScript">
+        <meta name="keywords" content="html, css, javascript, estudo, sites, páginas">
+    
+        <style>
+            body{
+                background-color: #ddd;
+            }
+            
+            h1{
+                font-family: Arial, Helvetica, sans-serif; /* A primeira fonte é a principal. Se o usuário não tiver essa fonte instalada, o browser tentará exibir a helvetica e se nenhuma dessas duas estiver instalada, será colocada qualquer fonte da família sans-serif que esteja disponível*/ 
+                font-size: 48px;
+                font-style: normal;
+                color: #ff8a04; /*É o mesmo que 00ff00, podemos fazer isso só quando temos 3 blocos de 2 números repetidos, ficando com apenas 3 números*/
+                background-color: #14a4f7;
+                margin: 50px 30px;
+                padding-top: 20px;
+                width: 500px;
+            }
+            
+            /* Ah, comentário são assim no CSS! */
+            h2{
+                font-family: 'Courier New', Courier, monospace;
+                text-transform: uppercase;
+                text-align: center;
+                color: #41ce4d;
+                background-color: aliceblue;
+                padding-top: 15px;
+                height: 40px;
+            }
+            
+            h3{
+                font-style: oblique;
+            }
+
+            p{
+                font-variant: normal;
+                text-align: justify;
+                text-indent: 30px;
+            }
+
+            a{
+                text-decoration: none;
+                font-variant: small-caps;
+            }
+
+            /* Isso é um seletor por ID */
+            #destaque{
+                color: gray;
+                text-decoration: line-through;
+            }
+            
+            /* Isso é um seletor por classe. É o mais utilizado no CSS */
+            .minha_classe{
+                color: brown;
+                font-variant: small-caps;
+            }
+
+        </style>
+    
+    </head>
+
+    <body>
+        <h1>Classes CSS</h1>
+        <h2>Esse é um título</h2>
+        <p>Esse é um parágrafo que faz parte do meu primeiro título. Vamos editá-lo com um pouco de CSS!</p>
+
+        <h2>Outro título</h2>
+        <h3>E esse é um subtítulo</h3>
+        <p>Será que eu vou ficar fera no CSS?</p>
+        <p id="destaque">Quero criar minha primeira página logo...</p>
+        
+        <h3>Agora, um pouco de mussum ipsum na prática, para testar o CSS:</h3>
+        
+        <p class="minha_classe">Mussum Ipsum, cacilds vidis litro abertis. Cevadis im ampola pa arma uma pindureta.Si u mundo tá muito paradis? Toma um
+        mé que o mundo vai girarzis!Diuretics paradis num copo é motivis de denguis.Paisis, filhis, espiritis santis.</p>
+
+        <p>Pra lá , depois divoltis porris, paradis.Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo, vitae
+        iaculis nisl.Diuretics paradis num copo é motivis de denguis.Viva Forevis aptent taciti sociosqu ad litora torquent.</p>
+
+        <p class="minha_classe">Manduma pindureta quium dia nois paga.Leite de capivaris, leite de mula manquis sem cabeça.Admodum accumsan disputationi
+        eu sit. Vide electram sadipscing et per.Copo furadis é disculpa de bebadis, arcu quam euismod magna.</p>
+
+    </body>
+</html>

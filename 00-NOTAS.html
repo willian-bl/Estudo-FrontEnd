@@ -1,0 +1,153 @@
+1. HYPERTEXTO E A INTERNET
+
+    Hypertexto não é uma leitura linear. É uma leitura interativa, onde o leitor escolhe qual caminho ele quer seguir e sobre quais assuntos quer ler.
+    Uma página aponta para outra e tudo está conectado, ou seja, linkado.
+
+    A internet funciona no sistema cliente/servidor. Toda vez que acessamos uma página na internet, o cliente faz uma requisição (pedido) ao servidor para que ele entregue essa página para nós. O servidor responde e devolve um HTML, a página que pedimos. E o nosso navegador interpreta essa página e nos mostra o resultado.
+    URL -> Localizador de recursos
+    HTTP -> Hyper Text Transfer Protocol (Protocolo de Transferência de Hypertexto): Protocolo padrão para a transferência e comunicação entre as máquinas na internet.
+    HTML -> Hyper Text Markup Language (Linguagem de Marcação de Hypertexto): Linguagem utilizada para construir as páginas da WEB, posicionando e marcando onde cada conteúdo deve ficar e como deve ser exibido pelo navegador (se é um título, um parágrafo, uma imagem etc).
+    *Atenção: HTML não é uma linguagem de programação, é uma linguagem de marcação. Ninguém PROGRAMA em HTML.
+
+    Por volta dos anos 2000, as tabelas eram a base dos sites. Menus e páginas eram todos feitos a partir de tabelas, pois era o recurso que tinham a disposição. Além disso, os navegadores interpretavam o HTML de maneira diferente um do outro.
+    W3C -> Consórcio de várias empresas que definem os padrões da internet. 
+        *Usos:
+        HTML -> conteúdo
+        CSS -> estilo/formatação
+        JavaScript -> interatividade
+
+2. HTML - INFORMAÇÕES BÁSICAS
+    São arquivos de texto com marcações.
+    Tem extensão .html
+    Para escrever precisamos de um editor de código
+    O arquivo é lido (interpretado) através dos navegadores (browsers). Ex: Mozilla Firefox, Google Chrome etc 
+
+    Uma página WEB é um arquivo HTML.
+    Já um site é a junção de vários arquivos HTML
+
+3. TAGS - INFORMAÇÕES BÁSICAS
+    -> As TAGs são marcações que especificam ao navegador como o conteúdo deve ser exibido, diferenciando o que é um título, o que é um subtítulo e o que é um parágrafo, por exemplo.
+    Exemplos:
+    <TAG>Conteúdo</TAG>
+    As tags iniciam com sinal "<" (menor que) e terminam com o sinal ">" (maior que). A tag em si fica dentro desses sinais e informa como deve ser exibida a informação
+    Na grande maioria dos casos, existem tags de abertura <TAG> e fechamento </TAG>. A diferença entre elas é que a tag de fechamento possui uma barra "/" antes do nome da TAG.
+    O conteúdo é posicionado entre a TAG de abertura e a de fechamento.
+
+    <h1>Título</h1>  -> A TAG h1 define títulos na página. <h1> informa ao navegador: Aqui começa um título, exiba o que está a partir daqui com a formatação de um título. Já </h1> informa ao navegador: Aqui termina o título. Assim, no navegador, a palavra "Título" aparecerá formatada com layout de um título.
+    <p>Parágrafo</p>  -> Da mesma forma, a tag <p> e </p> identifica parágrafo, informando ao navegador que o que está dentro da tag deve ser exibido como um parágrafo.
+
+    Essa é a forma como o computador separa e interpreta cada parte de um arquivo HTML para exibi-los da maneira correta. Tanto é que um html pode ser escrito inteiro em apenas uma linha (o que não ficaria legível para nós), mas o computador, que apenas segue as TAGs, não teria problema algum com isso.
+        
+    3.1 - Aninhamento de TAGs
+        As TAGs podem (e devem) ser aninhadas entre si, tendo uma TAG dentro da outra, desde que a abertura e fechamento estejam corretos. Ex:
+        ERRADO: <p> Isso é um parágrafo com <b>negrito</p> </b>
+        CORRETO: <p> Isso é um parágrafo com <b>negrito</b> </p>  -> Se é aberto um parágrafo primeiro, DEVE-se fechá-lo por último. A segunda tag aberta deve ser a penúltima a fechar e assim por diante.
+
+    3.2 - TAGs sem fechamento
+        Existem TAGs que não possuem abertura e fechamento, ou seja, não são contêiners (não tem nenhum conteúdo dentro). Normalmente são TAGs de comandos.
+        Ex: TAG de quebra de linha: Não faz sentido falar ao navegador: "Aqui começa uma quebra de linha e aqui termina a quebra de linha". Nós só queremos pular uma linha e pronto. Assim, não precisamos de uma tag para a abertura e uma tag para fechamento.
+        Dessa forma, a TAG de quebra de linha é escrita como: <br />. Perceba que ela tem a abertura e o fechamento na mesma TAG. Em navegadores mais recentes, a barra no final nem é necessária, podendo ser escrita como <br>.
+
+    Dica: Via de regra, as TAGs são abreviaturas de suas funções em inglês, como br = break row (quebra de linha)
+    
+    3.3 - Atributos das TAGs
+        <TAG atributo="valor"> Texto aqui </TAG>
+        Um atributo são informações passadas a tag para modificá-la ou personalizar sua ação. Ex:
+        <a href="http://www.site.com.br"> Visite nosso site! </a>
+        A Tag de link <a> PRECISA, obrigatoriamente, de no mínimo um atributo, que é para qual site o link leva. Esse atributo é o href e seu valor é a url do site para qual o usuário será levado ao clicar no texto "Visite nosso site!".
+        Cada tag tem seus próprios atributos que podem ou não ser obrigatórios e para saber quais são, podemos utilizar uma colinha de algum site ou, normalmente, um editor de código mostra os atributos que podemos usar.
+        É claro que, com o tempo e a prática, acabamos decorando os atributos mais comuns.
+    
+4. ESTURUTURA BÁSICA
+    Todo arquivo html apresenta a seguinte estrutura:
+    <!DOCTYPE html> Declaração do tipo de arquivo. Sempre vem na primeira linha do código para mostrar ao user agent (agente do usuário = navegador) que tipo de arquivo ele vai exibir.
+    <html lang="pt-br"> A tag html indica o início e o fim do nosso código html. É uma boa prática indicar a língua da página através do atributo lang da tag html.
+        <head> Dentro da tag head temos as informações que são importantes para o user agent, mas que não aparecem na página em si.
+            <title>Título da aba do navegador</title> A tag title especifica o título da página que aparece no navegador
+            <meta tags> Informações adicionais para os motores de busca / user agents. Existem várias meta tags e é importante saber que elas sempre ficam dentro do head e não possuem tag de fechamento.
+            <link para arquivos externos> Outra coisa que colocamos dentro do head de nossas páginas são links para arquivos externos e de script, como por exemplo, css, javascript e o ícone que aparece na aba do browser;
+        </head>
+
+        <body> É o corpo da página, que traz as informações que queremos exibir
+            <!-- Conteúdo --> Dentro do body colocamos todo o conteúdo da página em si.
+        </body>
+    </html>
+
+    Dica: Tudo o que começa com "<!" não é uma TAG, e sim uma declaração. 
+
+5. PRINCIPAIS TAGS HTML
+    5.1 - Títulos
+        Hierarquiza informações
+        Quando menor o número, maior é a importância e o tamanho da fonte desse título. Vai até o header 6
+        <h1> header 1 - Maior título
+        <h2> - Título de nível 2. 
+        <h3>
+        ...
+        <h6>
+
+    5.2 - Formatação de textos
+        <p> Este é um parágrafo </p>
+        <i> Itálico </i>
+        <b> Negrito (bold) </b>
+        <u> Sublinhado </u>
+        <em> Itálico semântico </em> -> Essa tag serve para dar ênfase, mas o browser entende como itálico
+        <strong> Negrito semântico</strong> -> Mesmo que <em>, tem carga de importância na informação.
+
+    5.3 - Listas
+        *Lista não ordenada
+            <ul> Abre e fecha a lista desordenada (unordered list) - Com um ponto para cada item
+                <li> Item 1 </li> Cada li identifica um item da lista (list item)
+                <li> Item 2 </li>
+                <li> Item 3 </li>
+            </ul>
+
+        *Lista ordenada
+            <ol> Abre e fecha a lista ordenada (ordered list) - Com números, letras etc
+                <li> Item 1 </li> Cada li identifica um item da lista (list item)
+                <li> Item 2 </li>
+                <li> Item 3 </li>
+            </ol>
+
+    5.4 - Arquivos Externos:
+        Uma das tags de links para arquivos externos mais importante é a <a>:
+        <a href="http://www.site.com.br"> Este texto é clicável, ou seja tem um link nele </a> -> a="Anchor", âncora, vínculo.
+            href -> define qual site/página será aberto ao clicar no link, através de seu url.
+            target="_blank" -> define para que, ao clicar no link, a página seja aberta em uma nova janela
+            title -> Define o texto que será exibido ao passar o mouse por cima do link (o atributo title aparece em vários outros lugares, mas sua função será sempre essa: Exibir uma dica/mensagem para o usuário ao passar o mouse por cima de algo)
+
+        5.4.1 Tipos de Links
+            <a href="https://www... .com.br"> Link para site externo. Possui http ou https no início.
+            <a href="minha_pagina2.html"> Link para uma página local, do meu próprio site. Colocamos o caminho do arquivo html
+            <a href="#secao"> Link para uma seção da mesma página. Colocamos o id da seção em que queremos retornar
+            <a href="mailto:meuemail@gmail.com"> Link para enviar um email. Ao clicar, será aberto o aplicativo padrão de email do usuário, com o endereço colocado depois de 'mailto: ' como remetente.
+            Atualmente, é uma opção que não é muito usada, dentre outros motivos, porque é necessário ter um aplicativo de email padrão instalado no computador do usuário e atualmente a maioria prefere usar um aplicativo web de email.  
+
+        Dica: Normalmente colocamos um "#" como href de uma tag <a> como um placeholder, enquanto estamos desenvolvendo a página e queremos apenas dar a aparência de link. Depois, ao final do processo, colocamos o link correto
+
+        <link> Usado para vincular arquivos externos.
+            href -> caminho do arquivo
+            rel -> tipo do arquivo. Ex: rel="stylesheet" (link para um css); rel="" ... [Preencher depois]
+
+        <img> Usado para colocar imagens e/ou GIFs.
+            src -> caminho ou url da imagem (source = fonte da imagem)
+            alt -> define um texto alternativo mostrado no navegador caso a imagem não seja carregada por algum motivo e para ser lido por leitores de tela usados por deficientes visuais. 
+            Tipos de imagens aceitas: .jpg, .jpeg, .png, .gif, .svg, .webp
+                *svg é vetorial
+
+        <script > Tag para vincular arquivos JavaScript </script>
+            src -> caminho/url do arquivo            
+        
+    5.5 - OUTRAS TAGs
+    <br> Break Row -> Quebra de linha
+    <hr> Horizontal Rule -> Régua horizontal (Faz uma linha horizontal)
+
+    5.6 - TAGs META
+    Tags que são colocadas dentro do head de uma página, para fornecer mais informações ao user agent e motores de busca.
+        <meta charset="utf-8"> Tag para definir a codificação de caracteres da página. Usamos, como padrão, a codificação utf-8, que traz bastante opções de acentos e caracteres
+        <meta name="author" content="Nome do autor da página"> Define quem é o autor da página. 
+            Normalmente, as tags meta tem o atributo name="", que mostra de qual meta tag se trata e o content="", que será o valor dessa meta tag
+        <meta name="description" content="Descrição do site"> Normalmente, essa é a descrição da página que aparece nos motores do busca
+        <meta name="keywords", content="palavras, chave"> Define as palavras chave da página
+
+6. ANOTAÇÕES GERAIS
+    <!-- Comentários são assim no HTML! -->

@@ -1,0 +1,142 @@
+1. CSS - INFORMAÇÕES BÁSICAS
+    Cascading Style Sheets - Folha de Estilo em Cascatas
+    Formatação visual da página.
+    Sintaxe:
+        seletor{propriedade:valor;}
+        - seletor -> o que queremos alterar. Ex: tag p, h1 etc. Dentro das chaves temos a declaração, composta de propriedade e valor.
+        - propriedade -> qual propriedade queremos alterar. Alinhamento? Cor? fonte?
+        - valor -> é o valor da propriedade que queremos que a propriedade assuma. Ex: Se a propriedade é a cor, o valor pode ser azul, verde, branco etc
+        *Se tivermos mais de uma declaração, separamos por ponto e vírgula.
+        *O conjunto de seletor e suas declarações é chamado de regra.
+        Ex:
+        h1{color:red;}
+        h2{
+            color: red;
+            font-size: 16px;
+        }
+
+    1.1 - Maneiras de incluir uma formatação na página html
+        Inline: <p style="color:red; align:center">...</p> -> Direto no html. Não é recomendado por dificultar a manutenção e fazer com que seja necessário escrever o style em todas as tags que se deseja editar.
+        Interno: <style>...</style> -> Colocando a tag style dentro da tag head. Mas isso também não é muito recomendado porque se várias páginas html precisarem compartilhar um mesmo css, teríamos que repetir isso em todas elas.
+        Externo: <link href="nome_arquivo.css" rel="stylesheet" type="text/css"> -> É a melhor maneira. Criar um arquivo .css e referenciar ele dentro do head do html. Assim podemos reaproveitar um mesmo css para várias páginas html
+
+    /* Comentários são assim no CSS! */
+
+2. TIPOS DE SELETORES:
+    *Seletores de elemento:
+        Modifica todas as tags especificadas
+        No html: <p></p>
+        No css: p {...}
+
+    *Seletores de classes:
+        Modifica todas as tags que possuem a classe especificada
+        No html: <p class="minha-classe"></p>
+        No css: .minha-classe {...}
+
+    *Seletores de id:
+        Modifica apenas as tags que possuem um id epecífico. IDs são únicos em uma página
+        No html: <p id="meu-id"></p>
+        No css: #meu-id {...}
+    
+    2.1 - Uso de seletores:
+        ul li {...} formata todas as tags li que estão dentro de uma tag ul. Precisa dar um espaço entre as tags
+
+3. ALGUMAS PROPRIEDADES BÁSICAS
+    fonts
+        font-family (família da fonte, usado para mudar a fonte. Fonte padrão é Times New Roman)
+        font-size
+        font-style (normal ou itálico)
+        font-variant (mudar a forma de escrita)
+        
+        ATENÇÃO: não existe font-color!!!
+
+    text
+        text-align (alinhamento a esquerda, direita, centro etc)
+        text-decoration (sublinhado ou não; line-through: riscado em cima do texto)
+        text-indent (espaçamento no início do parágrafo)
+        text-transform (escrever tudo maiúsculo ou minúsculo)
+
+        ATENÇÃO: não existe text-color!!!
+
+    color & background-color
+        color é a cor da fonte e backgroud-color é a cor do fundo de uma página
+
+        *RGB: Red Green Blue. Dois números hexadecimais para a intensidade de cada cor.
+            Começa com "#"
+            Forma as cores por "adição". É a forma como as cores de luz funcionam
+            É uma das formas com que conseguimos declarar cores em um css
+            Ex: #000000 Preto
+                #FF0000 Vermelho
+                #00FF00 Verde
+                #0000FF Azul
+                #FFFF00 Amarelo
+                #FF00FF Magenta
+                #00FFFF Ciano
+                #FFFFFF Branco
+    
+        *Nome da cor: Podemos usar o nome da cor em inglês, que usamos cores pré-definidas que o html tem
+            Ex: blue; red; aqua; gold etc. O framework normalmente nos mostra as opções disponíveis
+
+    list-style
+        list-style-type (Tipo do bullet)
+        list-style-position (Alinhamento do bullet interno ou externo à lista)
+        list-style-image (Colocar uma imagem no bullet)
+
+    background-image: url(inserir_url_aqui) -> Para inserir uma imagem de fundo em algum elemento
+        Lembrar que no CSS trabalhamos com formatação e estilo, ou seja, colocamos imagens que são apenas de estilo e que não seriam relevantes para o nosso conteúdo, por ex.
+
+4. BOX MODEL
+    "Modelo de caixa"
+    Possui, de fora para dentro: Margin, padding, border
+    Border: Precisamos de pelo menos 3 propriedades para ser aplicada: border-color; border-style; border-width.
+    Ex: border-bottom-color... border-left... Muda só o lado da borda que escrevemos
+    padding é somado ao tamanho (height e width) para determinar a altura e largura final dos elementos
+    * Para ententer melhor, ver imagem de box model dentro do repositório
+
+    4.1 - Sintaxe Margin & Padding
+        p{
+            margin-top: 50px;
+            margin-right: 40px;
+            margin-bottom: 30px;
+            margin-left: 20px;
+        }
+        Pode ser abreviado como:
+        p{margin: top right bottom left}
+        p{margin: 50px 40px 30px 20px}
+        O mesmo vale para padding.
+
+        Também podemos abreviar mais assim:
+        p{padding: top right bottom left}
+        Se não tiver um valor para left, o mesmo valor de right será copiado para left:
+        p{padding: 50px 40px 30px;} = p{padding: 50px 40px 30px 40px;}
+        Agora, se não tivermos nem bottom nem left, o valor do top será copiado para o bottom, e right para left:
+        p{padding: 50px 40px;} = p{padding: 50px 40px 50px 40px;}
+        E, por fim, se tivermos apenas um valor, ele será copiado para todos os outros:
+        p{padding: 50px} = p{padding: 50px 50px 50px 50px}
+
+    4.2 - Sintaxe Border
+        p{
+            border-style: dotted;
+            border-width: 5px;
+            border-color: red;
+        }
+        É o mesmo que:
+        p{border: style width color;}
+        p{border: dotted 5px red;}
+
+5. PSEUDO-CLASSES
+    Não dependem só das classes, mas também da interação com o usuário. Ex: Se o usuário clicou no link ou não, se o mouse está sobre um item etc
+    Sintaxe:
+        seletor:pseudoclasse {...} /* Não tem espaço entre o seletor e a pseudo-classe */
+        a:link{...}
+    
+    5.1 - Pseudo classes mais importantes
+        Links
+            a:link{} Quando o link ainda não foi visitado, normal
+            a:visited{} Quando o usuário já visitou o link, normal
+            a:hover{} Quando o usuário está com o mouse em cima do link
+            a:active{} Quando o usuário está com o botão do mouse pressionado no link
+
+6. ANOTAÇÕES GERAIS
+    inhert -> herança
+    margin: auto (Divide automaticamente o espaço na horizontal em tamanhos iguais para a esquerda e a direita, centralizando o elemento)

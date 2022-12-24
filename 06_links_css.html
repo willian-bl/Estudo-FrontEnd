@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Links</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Willian">
+        <meta name="description" content="Estudos de HTML5, CSS e JavaScript">
+        <meta name="keywords" content="html, css, javascript, estudo, sites, páginas">
+    
+    <style>
+        /* p, li, a{
+            font-family: sans-serif;
+        } */
+
+        /* Assim todos as tags dentro de body herdam a declaração e assumem essa formatação */
+        body{
+            font-family: sans-serif;
+            color: green /* Não funciona para o link. Tem que por separado para ele mesmo*/
+        }
+
+        a:link{
+            color: green;
+        }
+
+        a:visited{
+            color: #3782ad;
+        }
+
+        a:hover{
+            background-color: blue;
+            color: white;
+        }
+
+        a:active{
+            background-color: #ccc;
+        }
+
+        ul li{
+            list-style-type: circle;
+        }
+
+        ol li{
+            list-style-type: upper-roman;
+            list-style-position: inside;
+        }
+
+    </style>
+    
+    </head>
+
+    <body>
+        <h1>Links</h1>
+        <p><a href="01_teste.html">Veja o arquivo 1</a></p>
+        <p><a href="02_tags.html">Veja o arquivo 2</a></p>
+        <p><a href="#">Teste</a></p>
+
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+
+        <ol>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ol>
+    </body>
+</html>
