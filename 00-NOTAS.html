@@ -25,6 +25,8 @@
     Uma página WEB é um arquivo HTML.
     Já um site é a junção de vários arquivos HTML
 
+    index.html é o nome padrão do arquivo da página principal do site. Quando temos um diretório que contém um arquivo index.html o browser reconhece e carrega esse arquivo quando não especificamos o caminho de nenhum outro
+
 3. TAGS - INFORMAÇÕES BÁSICAS
     -> As TAGs são marcações que especificam ao navegador como o conteúdo deve ser exibido, diferenciando o que é um título, o que é um subtítulo e o que é um parágrafo, por exemplo.
     Exemplos:
@@ -74,6 +76,23 @@
     </html>
 
     Dica: Tudo o que começa com "<!" não é uma TAG, e sim uma declaração. 
+
+    4.1 - Outras tags de estrutura
+        4.1.1 Tags semânticas
+            <header></header> Cabeçalho de uma página ou seção
+            <nav></nav> Menu de navegação principal da página
+            <main></main> Conteúdo principal da página
+            <footer></footer> Rodapé de uma página ou seção
+            
+            <section></section> Seção da página. Separa um "pedaço" da página de outro; separa o conteúdo em blocos
+            <article></article> Onde fica o conteúdo CENTRAL da página, que não depende de nenhum outro conteúdo. Pode ter mais de um article por página
+            <aside></aside> Conteúdo que seja à parte do conteúdo principal, ou seja, que não faz parte do conteúdo principal da página (ex: anúncios)
+            
+            4.1.2 - Tags não semânticas
+                <div></div> Tag usada para a formatação com CSS. Cria um contêiner ao redor do conteúdo dentro da tag
+                <span></span> É "uma div usada dentro de um texto". Quando queremos formatar algo que está dentro de um texto ou parágrafo 
+
+        Tudo o que é SEMÂNTICO é aquilo que tem valor para o CONTEÚDO, traz um significado contigo
 
 5. PRINCIPAIS TAGS HTML
     5.1 - Títulos
@@ -151,3 +170,12 @@
 
 6. ANOTAÇÕES GERAIS
     <!-- Comentários são assim no HTML! -->
+
+    6.1 - HTML entities
+        Entidades HTML são símbolos que podem ser colocados através de códigos na forma &entity_name; ou &entity_number;
+        Ex: Maior e menor tem a função de abertura e fechamento de TAGs. Então para exibi-los CORRETAMENTE no navegador, usamos
+            &lt; ou &#60; para < e &gt; ou &#62; para >
+        
+        Mais sobre entities:
+            https://www.w3schools.com/html/html_entities.asp
+            https://www.freeformatter.com/html-entities.html

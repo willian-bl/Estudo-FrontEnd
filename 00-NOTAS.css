@@ -55,43 +55,63 @@
         text-decoration (sublinhado ou não; line-through: riscado em cima do texto)
         text-indent (espaçamento no início do parágrafo)
         text-transform (escrever tudo maiúsculo ou minúsculo)
+        text-shadow {deslocamento_x, deslocamento_y, blur, cor;}
 
         ATENÇÃO: não existe text-color!!!
 
     color & background-color
         color é a cor da fonte e backgroud-color é a cor do fundo de uma página
 
-        *RGB: Red Green Blue. Dois números hexadecimais para a intensidade de cada cor.
-            Começa com "#"
-            Forma as cores por "adição". É a forma como as cores de luz funcionam
-            É uma das formas com que conseguimos declarar cores em um css
-            Ex: #000000 Preto
-                #FF0000 Vermelho
-                #00FF00 Verde
-                #0000FF Azul
-                #FFFF00 Amarelo
-                #FF00FF Magenta
-                #00FFFF Ciano
-                #FFFFFF Branco
-    
-        *Nome da cor: Podemos usar o nome da cor em inglês, que usamos cores pré-definidas que o html tem
-            Ex: blue; red; aqua; gold etc. O framework normalmente nos mostra as opções disponíveis
+        Cores no HTML e CSS:
+            *Hexadecimal: #RedGreenBlue. Dois números hexadecimais para a intensidade de cada cor.
+                Começa com "#"
+                Forma as cores por "adição". É a forma como as cores de luz funcionam
+                É uma das formas com que conseguimos declarar cores em um css
+                Ex: #000000 Preto
+                    #FF0000 Vermelho
+                    #00FF00 Verde
+                    #0000FF Azul
+                    #FFFF00 Amarelo
+                    #FF00FF Magenta
+                    #00FFFF Ciano
+                    #FFFFFF Branco
+        
+            *Nome da cor: Podemos usar o nome da cor em inglês, que usamos cores pré-definidas que o html tem
+                Ex: blue; red; aqua; gold etc. O framework normalmente nos mostra as opções disponíveis
+            
+            *rgb(Red, Green, Blue)
+            *rgba(Red, Green, Blue, Alpha) -> Com o rgba conseguimos definir transparência também. 1 é sólido, sem transparência e 0 é totalmente transparente
 
     list-style
         list-style-type (Tipo do bullet)
         list-style-position (Alinhamento do bullet interno ou externo à lista)
         list-style-image (Colocar uma imagem no bullet)
+    
+    background
+        background-image: url(inserir_url_aqui) -> Para inserir uma imagem de fundo em algum elemento
+            Lembrar que no CSS trabalhamos com formatação e estilo, ou seja, colocamos imagens que são apenas de estilo e que não seriam relevantes para o nosso conteúdo, por ex.
+        background-attachment -> Deixa a imagem fixa ou "solta" na tela, rolando quando rolamos a página
+        background-repeat -> Repete a imagem caso não ocupe toda a área
+        background-size -> Define o tamanho da imagem 
+            background-size: largura altura
+            background-size: 100% 100% -> Sempre preenche toda a área, mas distorcendo caso mexa no tamanho da tela
+            background-size: contain -> Sempre mostra a imagem inteira, repetindo a imagem para completar o espaço que falta
+            background-size: cover -> Ocupa a área inteira mesmo que um pedaço da imagem seja escondido
+            
+    img
+        float (Deixa a imagem flutuando ao redor do texto, ficando na direita, na esquerda etc)
 
-    background-image: url(inserir_url_aqui) -> Para inserir uma imagem de fundo em algum elemento
-        Lembrar que no CSS trabalhamos com formatação e estilo, ou seja, colocamos imagens que são apenas de estilo e que não seriam relevantes para o nosso conteúdo, por ex.
+    line-height -> Altura da linha/tamanho entre uma linha e outra
+        Valores sem unidades de medida equivalem a espaços (1.5 = 1 espaço e meio)
+
+    letter-spacing -> Espaçamento das letras
 
 4. BOX MODEL
     "Modelo de caixa"
     Possui, de fora para dentro: Margin, padding, border
     Border: Precisamos de pelo menos 3 propriedades para ser aplicada: border-color; border-style; border-width.
     Ex: border-bottom-color... border-left... Muda só o lado da borda que escrevemos
-    padding é somado ao tamanho (height e width) para determinar a altura e largura final dos elementos
-    * Para ententer melhor, ver imagem de box model dentro do repositório
+    *Para ententer melhor, ver imagem de box model dentro do repositório
 
     4.1 - Sintaxe Margin & Padding
         p{
@@ -123,6 +143,27 @@
         É o mesmo que:
         p{border: style width color;}
         p{border: dotted 5px red;}
+    
+    4.3 - box-sizing
+        Por padrão, padding é somado ao tamanho (height e width) para determinar a altura e largura final dos elementos
+        A propriedade box-sizing define onde a propriedade width e height serão aplicadas. 
+        box-sizing: border-box -> define que o width e o height serão aplicados ao ELEMENTO, e o padding será substraído desse tamanho 
+        box-sizing: content-box -> É o padrão, onde o padding vai ser somado ao width e height
+    
+    4.4 - DIVs
+        No html usamos a tag div para criar uma caixa de formatação. Não tem nenhum valor semântico, seu único objetivo é criar uma área que usaremos para formatar no CSS.
+        Cria um contêiner ao redor do conteúdo dentro da TAG
+    
+    4.5 - Elementos de nível de blocos e de linha (inline)
+        Blocos -> Ocupam 100% da largura disponível e geram uma quebra de linha. Ex: div, p, h1, footer
+        Inline -> Ocupam somente a largura necessária para exibir o conteúdo e não geram quebras de linha. Ex: a, strong, span
+
+        Atenção: Por padrão, não aplicamos propriedades de modelbox em elementos de linha!
+            Para isso, usamos a propriedade display, para mudar a forma com que o elemento é exibido
+            *display: block
+            *display: inline-block
+            *display: none (Não mostra o elemento nem o texto que ele contém)
+                visibility: hidden (também esconde um elemento, mas deixa o espaço reservado para ele)
 
 5. PSEUDO-CLASSES
     Não dependem só das classes, mas também da interação com o usuário. Ex: Se o usuário clicou no link ou não, se o mouse está sobre um item etc
@@ -139,4 +180,13 @@
 
 6. ANOTAÇÕES GERAIS
     inhert -> herança
+
     margin: auto (Divide automaticamente o espaço na horizontal em tamanhos iguais para a esquerda e a direita, centralizando o elemento)
+        Quando for texto usar text-align: center. Quando for outra coisa usar margin:auto, lembrando sempre de definir uma lagrura (width) para o elemento 
+
+   *{} -> * Como seletor pega todos os elementos da página
+
+   A propriedade float retira o elemento do fluxo normal da estrutura HTML e deixa ele "flutuando", puxando os outros elementos para cima e deixando este intacto onde está
+        Não é muito recomendado, pois traz muitos efeitos colaterais para o resto da página
+        Quando usamos o float, os elementos seguintes serão afetados. Para que isso não aconteça, usamos a propriedade clear no elemento seguinte ao que possui a div float
+        

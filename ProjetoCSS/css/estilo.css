@@ -1,0 +1,123 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ccc;
+    margin: 0
+}
+
+.banner{
+    background-image: url(../imagens/bg-3.jpg);
+    height: 600px;
+    background-position: 70% center;
+    /* background-size: cover; */
+    border-top: solid 0.01px transparent;
+}
+
+.banner nav ul{
+    text-align: right;
+    margin-right: 30px;
+    margin-top: 30px;
+}
+
+.banner nav li{ /* Todas as li dentro de nav dentro de TAGs que tem a classe banner */
+    display: inline-block;
+    margin-left: 8px;
+    list-style: none;
+}
+
+.banner nav a{  /* Usando a formatação de padding no "a" a borda onde podemos clicar também aumenta*/
+    background-color: rgba(0, 0, 0, 0.25);
+    display: block;
+    padding: 20px;
+    border: 1px solid white; /* No caso da borda, as declarações funcionam em qualquer ordem */
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.banner nav a:hover{
+    /* background-color: rgba(225, 225, 225, 0.8) */
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.banner-content{
+    text-align: center;
+    color: white;
+    margin-top: 150px;
+}
+
+.banner-content h1{  /* Formata todos os h1 que estão dentro de alguma tag que tenha a classe banner-content*/
+    text-transform: uppercase;
+    font-size: 50px;
+    text-shadow: 3px 3px 2px #333;
+}
+
+.banner-content p{
+    display: inline-block;
+    background-color: rgba(0, 0, 0, .8);
+    padding: 15px 10px;
+    border-bottom: solid 2px white;
+}
+
+main{
+    width: 90%;
+    margin: auto;
+}
+
+.content-section{
+    background-color: white;
+    padding: 10px;
+    margin: 15px 0;
+    overflow: auto; /* Para enxergar os cards float*/
+    
+}
+
+.card{  /* O display: inline-block não é interessante, pois mesmo colocando tamanho de 33%, os cards não ficam na mesma linha quando expandimos a página*/
+    width: 32%;
+    float: left;
+    /* margin-bottom: 0; */
+    /* margin-left: 1%;  */
+    /* border: solid 1px blue; Margem definida para testes*/
+    box-sizing: content-box;
+}
+
+.card-1, .card-2{
+    margin-right: 2%;
+}
+
+.card img{
+    width: 100%;
+    display: block;  /* Para tirar o espaço entre a imagem e o parágrafo, pois inline tem esse espaço e com blocks podemos controlar isso*/
+}
+
+
+.card p{
+    background-color: #555;
+    margin-top: 0;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 20px 15px;
+}
+
+/* aside{
+    text-align: center;
+} */
+
+h2 {
+    background-color: #ddd;
+    border-bottom: solid 3px #ccc;
+    padding: 15px;
+}
+
+footer{  /* Também funciona. Tem o mesmo efeito que usar na TAG aside que eu coloquei, mas com o footer da para personalizar mais coisa de uma vez*/
+    text-align: center;
+    background: #777; /* backgroud-color também funciona*/
+    color: white;
+    height: 70px;
+    line-height: 70px;  /* Se queremos deixar um texto que só tem uma linha centralizado na vertical, podemos colocar como altura da linha do texto o mesmo valor da altura do conteiner */
+    text-shadow: 2px 2px 3px black;
+    /* font-size: 14px; */
+    /* padding-top: 30px; */
+}
