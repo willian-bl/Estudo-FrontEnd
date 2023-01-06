@@ -106,6 +106,17 @@
 
     letter-spacing -> Espaçamento das letras
 
+    position
+        static -> Padrão. elementos aparecem na ordem em que são definidos no HTML
+        relative -> Alteração de posição relativa à posição original do objeto. Porém, para os outros elementos, é como se ele ainda estivesse na posição original
+        absotule -> Elemento se posiciona em relação ao primeiro objeto pai com position sem padrão (static)
+        fixed -> Sempre relacionado com a janela do browser; não se move quando scrollamos a página
+        Obs: Para mover os elementos com position, usamos as propriedades top, right, left e bottom
+    
+    z-index -> Controla qual objeto será exibido, se sobrepondo um ao outro
+        O padrão é 0.
+        Um elemento com z-index maior se posiciona a frente de um elemento de z-index menor
+
 4. BOX MODEL
     "Modelo de caixa"
     Possui, de fora para dentro: Margin, padding, border
