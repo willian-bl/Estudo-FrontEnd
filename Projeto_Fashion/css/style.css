@@ -9,9 +9,11 @@ body{
     margin: auto;
 }
 
+/* -------------------- HEADER -------------------- */
 nav{
     background-color: #081A24;
     height: 50px;
+    margin-bottom: 0px;
     /* overflow: auto; */
 }
 
@@ -24,23 +26,140 @@ nav{
 
 nav ul{
     text-align: right;
-    line-height: 50px;
-    height: 50px;
+    
 }
 
 nav li{
     display: inline-block;
     list-style-type: none;
     margin-right: 60px;
+    /* background-color: aliceblue; */
+}
+
+nav a{
+    color: #2E4E5C;
+    display: block;
+    text-decoration: none;
+    font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 2.5px;
-    color:#2E4E5C;
-    font-size: 14px
+    line-height: 50px;
+    height: 50px;
+    /* background-color: blue; */
+}
 
-    /* margin: 0px; */
+nav a:hover{
+    background-color: rgba(46, 78, 92, 0.329);
+    color: #95abb4;
+    border: 2px solid #95abb4;
+    box-sizing: border-box;
 }
 
 #banner{
     width: 100%;
 }
 
+/* -------------------- PORTIFOLIO -------------------- */
+#portifolio{
+    text-align: center;
+    padding: 50px 0;
+    width: 80%;
+    margin: auto;
+}
+
+#portifolio h2{
+    font-size: 35px;
+    color: rgb(6, 6, 21);
+}
+
+#portifolio p{
+    font-size: 18px;
+    line-height: 35px;
+    color: #555;
+}
+
+/* -------------------- GALERIA -------------------- */
+#galeria{
+    /* background-color: #081A24; */
+    overflow: auto;
+    margin-top: 80px;
+}
+
+.imagens-da-galeria{
+    float: left;
+    width: 30%;
+    /* background-color: blue; */
+    margin-left: 2.5%;
+}
+
+.imagens-da-galeria img{
+    width: 100%;
+}
+
+h3{
+    color: #2E4E5C;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0;
+}
+
+#portifolio .imagens-da-galeria p{
+    color: #999;
+    margin-top: 0;
+    padding: 0;
+}
+
+/* -------------------- ABOUT -------------------- */
+#about{
+    clear: both;
+    position: relative;
+    background-color: #003D52;
+    padding: 6em 7em 7em 7em;
+    color: white
+}
+
+#about h2{
+    font-size: 50px;
+    text-transform: uppercase;
+    font-weight: lighter;
+}
+
+#about p{
+    padding-right: 40%;
+    line-height: 25px;
+    font-size: 18px;
+}
+
+#about img{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+/* -------------------- CONTACT -------------------- */
+#contact{
+    color: #003D52;
+    font-size: 25px;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    text-align: center;
+    margin: 40px;
+}
+
+/* -------------------- MAPA -------------------- */
+#mapa iframe{
+    width: 100%;
+    height: 500px;
+}
+
+/* -------------------- Footer -------------------- */
+footer{
+    background-color: #081A24;
+    color: #95abb4;
+    margin-top: 60px;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    letter-spacing: 5px;
+}
