@@ -1,6 +1,9 @@
+/* MEU CSS */
+
 body{
     margin: 0;
-    font-family: sans-serif;
+    padding: 0;
+    font-family: tahoma, arial, sans-serif;
 }
 
 #principal{
@@ -26,13 +29,13 @@ nav{
 
 nav ul{
     text-align: right;
-    
+    margin: 0;
 }
 
 nav li{
     display: inline-block;
     list-style-type: none;
-    margin-right: 60px;
+    margin: 0 60px 0 0;
     /* background-color: aliceblue; */
 }
 
@@ -46,13 +49,18 @@ nav a{
     line-height: 50px;
     height: 50px;
     /* background-color: blue; */
+    transition: color 0.3s linear;  /* transition: propriadade que recebe a transição, tempo da transição, e função/tipo da transição */
 }
 
-nav a:hover{
+/* nav a:hover{
     background-color: rgba(46, 78, 92, 0.329);
     color: #95abb4;
     border: 2px solid #95abb4;
     box-sizing: border-box;
+} */ /* Meu hover */
+
+nav a:hover{
+    color: #95abb4;
 }
 
 #banner{
@@ -67,14 +75,14 @@ nav a:hover{
     margin: auto;
 }
 
-#portifolio h2{
+#portifolio h1{
     font-size: 35px;
     color: rgb(6, 6, 21);
 }
 
 #portifolio p{
     font-size: 18px;
-    line-height: 35px;
+    line-height: 35px;  /* O espaço padrão é 16px = 1. Se colocar 2, equivale a um espaço duplo ou 32px*/
     color: #555;
 }
 
@@ -112,10 +120,13 @@ h3{
 /* -------------------- ABOUT -------------------- */
 #about{
     clear: both;
-    position: relative;
+    /* position: relative; */
     background-color: #003D52;
     padding: 6em 7em 7em 7em;
-    color: white
+    color: white;
+    background-image: url("../imagens/bg_detalhe.png");
+    background-repeat: no-repeat;
+    background-position: right bottom;
 }
 
 #about h2{
@@ -130,17 +141,12 @@ h3{
     font-size: 18px;
 }
 
-#about img{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-}
-
 /* -------------------- CONTACT -------------------- */
 #contact{
     color: #003D52;
     font-size: 25px;
     text-transform: uppercase;
+    font-style: normal;
     font-weight: 800;
     letter-spacing: -0.5px;
     text-align: center;

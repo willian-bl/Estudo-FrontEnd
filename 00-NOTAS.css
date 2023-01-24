@@ -117,6 +117,8 @@
     z-index -> Controla qual objeto será exibido, se sobrepondo um ao outro
         O padrão é 0.
         Um elemento com z-index maior se posiciona a frente de um elemento de z-index menor
+    
+    overflow -> Trata o conteúdo que excede o tamanho de um determinado elemento
 
 4. BOX MODEL
     "Modelo de caixa"

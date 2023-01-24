@@ -127,14 +127,51 @@
                 <li> Item 3 </li>
             </ol>
 
-    5.4 - Arquivos Externos:
+        *Lista de definição
+            <dl> Abre e fecha a definition list
+                <dt> Definition term (Termo a ser descrito) </dt>
+                <dd> Definition description (Descrição em si) </dd>
+            </dl>
+
+    5.4 - Tabelas:
+        <table> Tag para abrir e fechar tabelas
+            <tr> Table row - Linha da tabela
+                <td> Célula da tabela </td> Table data - Cada célula em uma linha (Cada td representa uma célula em uma coluna)
+            </tr> 
+        </table>
+
+        *Com semântica:
+        <table>
+            <caption>Título da tabela</caption>
+
+            <thead> Área de Cabeçalho da tabela
+                <th> Table head </th> (no lugar do <td>)
+                ...
+            </thead>
+            <tfoot> Rodapé da tabela (sim, fica abaixo do Cabeçalho!)
+                ...
+            </tfoot>
+            <tbody>
+                ...
+            </tbody>
+        </table>
+
+        *Outras propriedades:
+            - border-collapse: separate (com espaço entre as células) ou collapse (sem espaço entre as células)
+        
+        
+        5.4.1 - Mesclar colunas e linhas
+            <td colspan="2"></td> A célula vai ocupar duas colunas (mesclando célula na horizontal)
+            <td rowspan="2"></td> A célula vai ocupar duas linhas (mesclando célula na vertical)
+
+    5.5 - Arquivos Externos:
         Uma das tags de links para arquivos externos mais importante é a <a>:
         <a href="http://www.site.com.br"> Este texto é clicável, ou seja tem um link nele </a> -> a="Anchor", âncora, vínculo.
             href -> define qual site/página será aberto ao clicar no link, através de seu url.
             target="_blank" -> define para que, ao clicar no link, a página seja aberta em uma nova janela
             title -> Define o texto que será exibido ao passar o mouse por cima do link (o atributo title aparece em vários outros lugares, mas sua função será sempre essa: Exibir uma dica/mensagem para o usuário ao passar o mouse por cima de algo)
 
-        5.4.1 Tipos de Links
+        5.5.1 Tipos de Links
             <a href="https://www... .com.br"> Link para site externo. Possui http ou https no início.
             <a href="minha_pagina2.html"> Link para uma página local, do meu próprio site. Colocamos o caminho do arquivo html
             <a href="#secao"> Link para uma seção da mesma página. Colocamos o id da seção em que queremos retornar
@@ -156,11 +193,11 @@
         <script > Tag para vincular arquivos JavaScript </script>
             src -> caminho/url do arquivo            
         
-    5.5 - OUTRAS TAGs
+    5.6 - OUTRAS TAGs
     <br> Break Row -> Quebra de linha
     <hr> Horizontal Rule -> Régua horizontal (Faz uma linha horizontal)
 
-    5.6 - TAGs META
+    5.7 - TAGs META
     Tags que são colocadas dentro do head de uma página, para fornecer mais informações ao user agent e motores de busca.
         <meta charset="utf-8"> Tag para definir a codificação de caracteres da página. Usamos, como padrão, a codificação utf-8, que traz bastante opções de acentos e caracteres
         <meta name="author" content="Nome do autor da página"> Define quem é o autor da página. 
