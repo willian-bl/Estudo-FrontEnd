@@ -193,11 +193,57 @@
         <script > Tag para vincular arquivos JavaScript </script>
             src -> caminho/url do arquivo            
         
-    5.6 - OUTRAS TAGs
+    5.6 - Formulários
+        Ao enviar um formulário HTML, podemos executar uma ação no servidor ou enviar os dados coletados através de requisições http
+
+        <form> Abre e fecha o formulário
+            action -> Ação que o formulário vai executar quando for enviado. Pode ser enviar um email, executar um script no servidor etc. Ex: action="mailto:teste@hotmail.com"
+            method -> Método de envio dos itens do formulário: GET ou POST
+        
+        <input> Campos para inserção dos dados
+            type -> Tipo do campo. Existem vários
+                *submit -> Um dos principais tipos: cria um botão para enviar o formulário e executar a ação descrita na tag form
+                           Um campo de type submit também tem o atributo value -> Texto que aparece no botão de envio
+            name -> Nome único de cada campo do formulário, que vai identificá-lo quando o formulário for enviado para que possamos extrair seu conteúdo depois
+        
+        <label> Descrição de um campo
+            for -> id do input ao qual a descrição pertence
+
+        <fieldset> Campo de formulário. Um campo/grupo de inputs de um formulário, separados semanticamente
+            <legend> Coloca uma legenda para o <fieldset>
+        
+        5.6.1 - Estrutura
+            <form>
+                <fieldset>
+                    <legend> Login (Legenda para esta campo do formulário) </legend>
+
+                    <label for="user"> Digite o nome de usuário: </label>
+                    <input id="user" type="text" name="usuario">
+                    
+                    <label for="password"> Segundo campo: </label>
+                    <input id="password" type="password" name="psw">
+                </fieldset>
+                <fieldset>
+                    ...
+                </fieldset>
+
+                <input type="submit" value="enviar"> 
+            </form>
+
+        5.6.2 - Métodos de envio
+            GET - Envia os dados pela própria URL da página
+                Ex: www.site.com.br/search?q=pesquisar&order=small_first&hide_deleted=True
+                Depois da URL (www.site.com.br/search) temos os parâmetros enviados por get no estilo parametro=valor: q=pesquisar; order=small_first etc
+                O primeiro parâmetro é passado começando com ?
+                Os demais são passados com o símbolo &
+                
+            POST - Envia junto com a requisição http
+
+    5.7 - Outras TAGs
     <br> Break Row -> Quebra de linha
     <hr> Horizontal Rule -> Régua horizontal (Faz uma linha horizontal)
 
-    5.7 - TAGs META
+    5.8 - TAGs META
     Tags que são colocadas dentro do head de uma página, para fornecer mais informações ao user agent e motores de busca.
         <meta charset="utf-8"> Tag para definir a codificação de caracteres da página. Usamos, como padrão, a codificação utf-8, que traz bastante opções de acentos e caracteres
         <meta name="author" content="Nome do autor da página"> Define quem é o autor da página. 

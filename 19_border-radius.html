@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Border Radius</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Willian">
+        <meta name="description" content="Estudos de HTML5, CSS e JavaScript">
+        <meta name="keywords" content="html, css, javascript, estudo, sites, páginas">
+
+        <style>
+            #radius{
+                background-color: orange;
+                width: 200px;
+                height: 200px;
+                margin: 50px auto;
+                border-radius: 50px 0px 100px 20px;  /* Curvatura da borda - Raio do círculo que corta a borda, ou seja, distância da borda até o ponto que é o centro desse círculo*/
+            }
+
+            #radius2{
+                background-color: darkcyan;
+                width: 200px;
+                height: 200px;
+                margin: 50px auto;
+                border-radius: 100px 50px / 25px 100px; /* Antes da barra: distância da borda na horizontal. Depois da barra: distância na vertical. Ao invés da borda ser cortada por um círculo, é cortada por uma elipse*/
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <h1>CSS efeitos</h1>
+        
+        <div id="radius"></div>
+        <div id="radius2"></div>
+        
+    </body>
+</html>

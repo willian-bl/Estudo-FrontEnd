@@ -119,6 +119,13 @@
         Um elemento com z-index maior se posiciona a frente de um elemento de z-index menor
     
     overflow -> Trata o conteúdo que excede o tamanho de um determinado elemento
+    
+    border-radius
+        border-radius: sup-esquerdo-x sup-direito-x inf-direito-x inf-esquerdo-x / sup-esquerdo-y sup-direito-y inf-direito-y inf-esquerdo-y
+        Arredonda os cantos do objeto. Antes da barra representa o tamanho da curvatura na horizontal e depois da barra, na vertical.
+    
+    box-shadow
+        box-shadow: deslocamento-x deslocamento-y esfumaçamento cor
 
 4. BOX MODEL
     "Modelo de caixa"

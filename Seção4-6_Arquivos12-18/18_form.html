@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Tipos de campo de formulário</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Willian">
+        <meta name="description" content="Estudos de HTML5, CSS e JavaScript">
+        <meta name="keywords" content="html, css, javascript, estudo, sites, páginas">
+    
+    <style>
+        body{
+            font-family: sans-serif;
+        }
+
+        h1{
+            text-align: center;
+        }
+
+        .formlogin{
+            width: 60%;
+            margin: 50px auto 0;
+        }
+
+        .formlogin label{
+            display: block;
+            margin-top: 25px;
+            margin-bottom: 5px;
+        }
+
+        .formlogin fieldset{
+            background-color: lightblue;
+            margin-bottom: 30px;
+        }
+
+        .formlogin legend{
+            background-color: white;
+            font-weight: bold;
+        }
+
+        .campo_medio{
+            display: block;
+            width: 50%;
+            box-sizing: border-box;
+            padding: 8px;
+            border: none;
+            background-color: lightcyan;
+        }
+        
+        .campo_pequeno{
+            display: block;
+            width: 10%;
+            box-sizing: border-box;
+            padding: 8px;
+            border: none;
+            background-color: lightcyan;
+        }
+
+        .botao{
+            display: inline-block;
+            width: 15%;
+            box-sizing: border-box;
+            padding: 8px;
+            margin-left: 15px;
+            border: none;
+            font-size: 16px;
+            text-transform: capitalize;
+            font-weight: bold;
+            background-color: royalblue;
+        }
+
+        .botao:hover{
+            background-color: cornflowerblue;
+        }
+
+        .campo_medio:focus, .campo_pequeno:focus{
+            background-color: white;
+        }
+
+
+    </style>
+
+    </head>
+
+    <body>
+        <h1>Formulário de Login</h1>
+
+        <form action="#" method="post" class="formlogin"> 
+            <fieldset>
+                <legend>Dados pessoais</legend>
+
+                <label>Email</label>
+                <input required type="email" class="campo_medio" maxlength="20" placeholder="Digite um email válido">
+                <!-- o atributo required faz com que o campo seja obrigatório para enviar o formulário -->
+
+                <label>Número de filhos</label>
+                <input type="number" class="campo_pequeno" min="0" max="1000" step="0.5">
+                
+                <label>Nascimento</label>
+                <input type="date" class="campo_medio" min="2023-01-15" max="2138-01-30">
+                
+                <p>Sexo:</p>
+                <label>
+                    <input type="radio" name="sexo" value="M">
+                    Masculino
+                </label>
+                <label>
+                    <input type="radio" name="sexo" value="F">
+                    Feminino
+                </label>
+                <label>
+                    <input type="radio" name="sexo" value="O">
+                    Outro
+                </label>
+                
+                <input type="hidden" name="expira" value="2018-12-30">
+             
+                
+                <label> Estado</label>
+                <select name="estado" class="campo_medio">
+                    <option value="0">Selecione</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="MG">Minas Gerais</option>
+                </select>
+
+                <!-- tipo select para o servidor: name=value (Ex: estado=SP se marcar São Paulo)-->
+
+            </fieldset>
+
+            <fieldset>
+                
+                <legend>Área de interesse</legend>
+                
+                <label><input type="checkbox" name="interesse" value="html">HTML</label>
+                <label><input type="checkbox" name="interesse" value="css">CSS</label>
+                <label><input type="checkbox" name="interesse" value="JS">Javascript</label>
+                
+                <!-- Resultado no servidor: name=value&name=value&name=value... para todos os itens marcados. Ex: Se marcar HTML e CSS, teremos: interesse=html&interesse=css -->
+                
+            </fieldset>
+
+            <fieldset>
+                <legend>Mensagem</legend>
+                <textarea name="msg" cols="30" rows="10" maxlength="10"></textarea>
+                
+                <textarea style="resize: none" name="contrato" cols="30" rows="10" readonly>Aqui entra o texto do contrato que precisa ser aceito</textarea>  <!-- Também tem o atributo disabled, que deixa a caixa de texto desativada para edição e com uma formatação como se estivesse desativada mesmo -->
+                <label><input type="checkbox" checked>Li e aceito</label>
+                
+                <input type="range" min="0" max="10" step="1" >
+                <input type="time">
+                <input type="color">
+                
+                <select size="5" multiple>
+                    <option>opcao 1</option>
+                    <option>opcao 2</option>
+                    <option>opcao 3</option>
+                    <option>opcao 4</option>
+                    <option>opcao 5</option>
+                </select>
+                
+            </fieldset>
+                
+            <input type="submit" value="mandar" class="botao">  <!-- Envia o formulário -->
+            <input type="button" value="button" class="botao">  <!-- Botão sem ação padrão, usado para configurar ações personalizáveis via JavaScript, por ex -->
+            <input type="reset" value="reset" class="botao">  <!-- Botão que reseta o conteúdo do formulário -->
+
+        </form>
+    </body>
+</html>
