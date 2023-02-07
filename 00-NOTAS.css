@@ -124,9 +124,10 @@
         border-radius: sup-esquerdo-x sup-direito-x inf-direito-x inf-esquerdo-x / sup-esquerdo-y sup-direito-y inf-direito-y inf-esquerdo-y
         Arredonda os cantos do objeto. Antes da barra representa o tamanho da curvatura na horizontal e depois da barra, na vertical.
     
-    box-shadow
-        box-shadow: deslocamento-x deslocamento-y esfumaçamento cor
-
+    box-shadow & text-shadow
+        box-shadow: deslocamento-x deslocamento-y esfumaçamento tamanho-sombra cor
+        * text-shadow não tem como aumentar ou diminuir o tamanho da sombra, mas os outros atributos são os mesmos
+    
 4. BOX MODEL
     "Modelo de caixa"
     Possui, de fora para dentro: Margin, padding, border
@@ -207,7 +208,13 @@
 
    *{} -> * Como seletor pega todos os elementos da página
 
-   A propriedade float retira o elemento do fluxo normal da estrutura HTML e deixa ele "flutuando", puxando os outros elementos para cima e deixando este intacto onde está
+    A propriedade float retira o elemento do fluxo normal da estrutura HTML e deixa ele "flutuando", puxando os outros elementos para cima e deixando este intacto onde está
         Não é muito recomendado, pois traz muitos efeitos colaterais para o resto da página
         Quando usamos o float, os elementos seguintes serão afetados. Para que isso não aconteça, usamos a propriedade clear no elemento seguinte ao que possui a div float
-        
+    
+    @ no css é uma diretiva.
+
+
+7. SAIBA MAIS
+    https://css-tricks.com/ -> Site com dicas e sintaxe de CSS
+    https://cubic-bezier.com/ -> Site para definir valores de cubic bezier

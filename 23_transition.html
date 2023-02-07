@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Transições</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Willian">
+        <meta name="description" content="Estudos de HTML5, CSS e JavaScript">
+        <meta name="keywords" content="html, css, javascript, estudo, sites, páginas">
+    
+        <style>
+            div{
+                width: 100px;
+                height: 100px;
+                background-color: darkblue;
+
+                transition-property: width, height;
+                transition-duration:.5s, 2s;
+                transition-timing-function: cubic-bezier(.39,-0.35,.67,1.35);
+                transition-delay: 0, .8s;
+                /* https://cubic-bezier.com/ -> Pegar valores de cubic bezier */
+            }
+
+            div:hover{
+                width: 400px;
+                height: 400px;
+            }
+
+        </style>
+    
+    </head>
+
+    <body>
+        <h1>Transições!</h1>
+        <div>asdf</div>
+        
+    </body>
+</html>
