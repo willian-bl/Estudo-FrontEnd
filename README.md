@@ -1,10 +1,12 @@
 # Estudo FrontEnd - HTML, CSS & JavaScript
+🔄 Em andamento
 
 Repositório para estudo e anotações front-end com HTML, CSS & JavaScript
 <br>
 
-Os arquivos 00-NOTAS.html e 00-NOTAS.css possuem anotações das respectivas linguagens. <br>
-O arquivo "Estrutura base.html" contém a estrutura básica de uma página HTML para ser copiada sempre que precisar iniciar um novo arquivo HTML.
+Os arquivos `00-NOTAS.html` e `00-NOTAS.css` possuem anotações das respectivas linguagens. <br>
+O arquivo `Estrutura base.html` contém a estrutura básica de uma página HTML para ser copiada sempre que precisar iniciar um novo arquivo HTML.
 
 ### Referências dos estudos: 
-- Curso da Udemy: <a href="https://www.udemy.com/course/curso-web-design-fundamentos-aprenda-html-css-e-javascript/"> Curso Web Design Completo: HTML5, CSS3 e JS + 5 Projetos
+- Curso da Udemy: <a href="https://www.udemy.com/course/curso-web-design-fundamentos-aprenda-html-css-e-javascript/"> Curso Web Design Completo: HTML5, CSS3 e JS + 5 Projetos </a>
+- Repositório com conteúdo do curso: <a href="https://github.com/serfrontend/CursoWebFundamentosV2/tree/main"> Github </a>
