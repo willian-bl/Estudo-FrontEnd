@@ -40,6 +40,10 @@
     
     2.1 - Uso de seletores:
         ul li {...} formata todas as tags li que estão dentro de uma tag ul. Precisa dar um espaço entre as tags
+        p, h1 {...} formata todas as tags p E h1 com o mesmo formato
+        li.classe {...} formata todas as tags li que tem a classe "classe"
+        .classe > p {...} seleciona todas as tags p que são filhos DIRETOS de um elemento da classe "classe"
+        input[type="text"] {...} seleciona todas as tags input cujo atributo "type" seja text
 
 3. ALGUMAS PROPRIEDADES BÁSICAS
     fonts
@@ -235,7 +239,28 @@
             a:hover{} Quando o usuário está com o mouse em cima do link
             a:active{} Quando o usuário está com o botão do mouse pressionado no link
 
-7. ANOTAÇÕES GERAIS
+7. UNIDADES DE MEDIDA
+        px - Pixels -> Usar apenas para margens e paddings pequenos, esfumaçamentos etc. Evitar usar em width, height, tamanho de fontes etc
+        
+        em -> 1em é 16px, mas isso pode mudar de acordo com as configurações que o usuário usar no browser ou computador. Logo, em se adapta melhor a diferentes situações.
+            Quando utilizado em font-size é sempre relativo ao font-size do elemento pai. Se meu elemento pai tem 2em e o filho tem 1em, na verdade 1em do filho equivale a medida completa do pai, ou seja, 2em. Já 1.5em equivale a 1.5*2em do elemento pai 
+            Quando aplico "em" em um elemento que não é o font-size, ele vai se basear no font-size do próprio elemento 
+            em é sempre convertido para pixels para ser exibido
+        rem - Root em -> Sempre relativo ao tamanho da fonte da raiz do documento, ou seja, da tag HTML. Logo, independente da estrutura hierárquica das tags que estou usando, 1rem sempre será igual em todo o documento
+            Normalmente, usamos em e rem em font-size
+        
+        % - Porcentagem -> Não tem segredo, usa uma porcentagem do tamanho da mesma propriedade do elemento pai
+            Porcentagem em paddding e margin é referente à largura do elemento
+
+        Unidades de viewport: vh e vw (Viewport é a Área visível do browser / janela do browser)
+            vh - Viewport height -> medida de altura - Sempre se referencia à altura da viewport. 90vh é 90% da altura da viewport (janela/área visível)
+            vw - Viewport width -> medida de largura - Sempre se referencia à largura da viewport.
+
+        ch - character unit -> Relativo ao tamanho da fonte, mas 1 ch equivale à largura do algarismo "0" da fonte atual. Assim, equivale, mais ou menos, ao tamanho de 1 caracter da fonte atual
+            
+        *0 não tem unidade de medida. Pode ser 0em, 0% ou somente 0, dá na mesma 
+
+8. ANOTAÇÕES GERAIS
     inhert -> herança
 
     margin: auto (Divide automaticamente o espaço na horizontal em tamanhos iguais para a esquerda e a direita, centralizando o elemento)
@@ -250,7 +275,7 @@
     @ no css é uma diretiva.
 
 
-7. SAIBA MAIS
+9. SAIBA MAIS
     https://css-tricks.com/ -> Site com dicas e sintaxe de CSS
     https://cubic-bezier.com/ -> Site para definir valores de cubic bezier
 
