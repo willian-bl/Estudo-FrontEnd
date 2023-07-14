@@ -127,17 +127,20 @@
     
     border-radius
         border-radius: sup-esquerdo-x sup-direito-x inf-direito-x inf-esquerdo-x / sup-esquerdo-y sup-direito-y inf-direito-y inf-esquerdo-y
-        Arredonda os cantos do objeto. Antes da barra representa o tamanho da curvatura na horizontal e depois da barra, na vertical.
-    
+        Arredonda os cantos do objeto. Antes da barra representa o tamanho da curvatura na horizontal e depois da barra, na vertical. Ou, se passar valores sem a barra, corresponde a um círculo
+
     box-shadow & text-shadow
         box-shadow: deslocamento-x deslocamento-y esfumaçamento tamanho-sombra cor
         * text-shadow não tem como aumentar ou diminuir o tamanho da sombra, mas os outros atributos são os mesmos
+        * tamanho da sombra, no box-shadow, é opicional
     
 4. BOX MODEL
     "Modelo de caixa"
     Possui, de fora para dentro: Margin, outline, border, padding
     Border: Precisamos de pelo menos 3 propriedades para ser aplicada: border-color; border-style; border-width.
-    Ex: border-bottom-color... border-left... Muda só o lado da borda que escrevemos
+    A propriedade outline (contorno) é parecida com a border, mas esta não altera o tamanho do elemento. 
+        Além disso, também temos mais uma propriedade relacionada com o outline, que é a outline-offset, que registra a distância do outline do elemento
+    Também é interessante lembrar que podemos declarar essas propriedades do box-sizing de diferentes formas. Ex: border-bottom-color... border-left... Muda só o lado da borda que estamos trabalhando
     *Para ententer melhor, ver imagem de box model dentro do repositório
 
     4.1 - Sintaxe Margin & Padding
@@ -176,7 +179,8 @@
         A propriedade box-sizing define onde a propriedade width e height serão aplicadas. 
         box-sizing: border-box -> define que o width e o height serão aplicados ao ELEMENTO, e o padding será substraído desse tamanho 
         box-sizing: content-box -> É o padrão, onde o padding vai ser somado ao width e height
-    
+        *A propriedade box-sizing não faz diferença para o outline. 
+
     4.4 - DIVs
         No html usamos a tag div para criar uma caixa de formatação. Não tem nenhum valor semântico, seu único objetivo é criar uma área que usaremos para formatar no CSS.
         Cria um contêiner ao redor do conteúdo dentro da TAG
@@ -273,7 +277,14 @@
         Quando usamos o float, os elementos seguintes serão afetados. Para que isso não aconteça, usamos a propriedade clear no elemento seguinte ao que possui a div float
     
     @ no css é uma diretiva.
-
+    CSS também possui funções. Elas são do tipo: nomedafuncao()
+        Ex: função calc() -> Permite fazer cálculos no CSS, podendo misturar unidades de medida diferentes (ex: em e px)
+    
+    Custom Properties - Variáveis
+        *No CSS, também podemos criar variáveis, que vão guardar valores de propriedades para nós. A sintaxe é a seguinte:
+        --nome-da-variavel: valor;
+        E para usar:
+        propriedade: var(--nome-da-variavel);
 
 9. SAIBA MAIS
     https://css-tricks.com/ -> Site com dicas e sintaxe de CSS

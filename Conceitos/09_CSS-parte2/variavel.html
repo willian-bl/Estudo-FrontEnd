@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Variaveis</title>
+
+    <style>
+        /* normalmente, definimos as variáveis do CSS na root */
+        :root {  /* root é um pseudo-elemento no CSS. Definir as coisas aqui é o mesmo que definir na tag html, mas aqui não temos a especificidade */
+                 /* para mais informações de especificidade, olhar o estilo.css do projeto 04_ProjetoPriceCards, linha 33 */
+            --header-height: 10rem;
+            --main-color: rgba(255, 0, 0, .8);
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        header {
+            width: 100%;
+            background-color: var(--main-color);
+            height: var(--header-height);
+            font-size: 2rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        main {
+            --header-height: 2rem;
+            min-height: calc(100vh - var(--header-height) - 2rem);
+            background-color: #ccc;
+            font-size: 2rem;
+            margin-top: var(--header-height);
+        }
+
+        p {  /* O CSS procura o valor da variável começando no próprio seletor e depois procurando no seletor do elemento pai mais próximo*/
+            margin: calc(var(--header-height) * 2)
+        }
+
+        footer {
+            height: 10rem;
+            font-size: 2rem;
+            background-color: var(--main-color)
+        }
+    </style>
+</head>
+
+<body>
+    <header>header</header>
+    <main>main
+        <!-- Nesse parágrafo, o elemento pai mais próximo que tem a definição da variável --header-height é o main. Logo, no estilo desse p o --header-height vale 2rem (valor definido no main) -->
+        <p>teste</p> 
+    </main>
+    <footer>footer
+        <!-- Já aqui a definição mais próxima é do :root mesmo (que tem o mesmo nível hierárquico que o html). Então aqui a variável --header-height vale 10rem -->
+        <!-- Isso está relacionado com escopo de variáveis -->
+        <p>teste 2</p>
+    </footer>
+</body>
+
+</html>
