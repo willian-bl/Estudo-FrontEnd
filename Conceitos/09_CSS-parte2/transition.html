@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Transition</title>
+
+    <style>
+        div {
+
+            --anima: cubic-bezier(.59, -0.3, .49, 1.36);
+
+            background-color: orange;
+            width: 200px;
+            height: 150px;
+            margin: 100px;
+
+            transition-property: width, height, background-color; /* Transições mudam o valor de uma propriedade de forma suave*/
+            transition-duration: .5s, 1s;  /* Tenho 2 valores para 3 properties de transição. O CSS vai duplicar o primeiro valor, que será do primeiro e terceiro transition-property */
+            transition-timing-function: cubic-bezier(.59, -0.3, .49, 1.36);
+            transition-delay: 0s, .3s; /* Em transições e animações, o 0 PRECISA ter unidade de medida, em ms ou s */
+            /* Só conseguimos usar o transition em propriedades numéricas (ou cores, pois essas podem ser representadas em códigos hexadecimais ou rgb)*/
+
+            /* transition: property(all) duration(0s) function(ease) delay(0s) */
+            /* Usando o transition abreviado, em uma linha só */
+            transition: width .5s var(--anima), height 1s var(--anima) .3s, background-color .5s var(--anima);
+        }
+
+        div:hover {
+            width: 400px;  /* Só de colocar uma largura diferente no hover, o tamanho é alterado quando temos o hover, mas é de forma brusca */
+            height: 300px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

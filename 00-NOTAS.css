@@ -134,6 +134,11 @@
         * text-shadow não tem como aumentar ou diminuir o tamanho da sombra, mas os outros atributos são os mesmos
         * tamanho da sombra, no box-shadow, é opicional
     
+    transition
+        transition: transition-property(all) transition-duration(0s) ransition-timing-function(ease) transition-delay(0s)
+        * Faz a transição de propriedades numéricas e cores de maneira suave
+        * Ente parênteses temos os valores padrão 
+
 4. BOX MODEL
     "Modelo de caixa"
     Possui, de fora para dentro: Margin, outline, border, padding
@@ -262,7 +267,7 @@
 
         ch - character unit -> Relativo ao tamanho da fonte, mas 1 ch equivale à largura do algarismo "0" da fonte atual. Assim, equivale, mais ou menos, ao tamanho de 1 caracter da fonte atual
             
-        *0 não tem unidade de medida. Pode ser 0em, 0% ou somente 0, dá na mesma 
+        *0 não tem unidade de medida. Pode ser 0em, 0% ou somente 0, dá na mesma  (isso só não é verdade quando trabalhamos com tempo. Nesses casos, devemos especificar a unidade: 0s ou 0ms)
 
 8. ANOTAÇÕES GERAIS
     inhert -> herança
