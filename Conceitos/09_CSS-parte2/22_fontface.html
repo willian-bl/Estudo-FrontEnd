@@ -11,14 +11,16 @@
         
         @font-face {
             font-family: 'nadia';
-            src: url(fonts/nadia/nadia-serif.eot);
-            src: url(fonts/nadia/nadia-serif.woff) format('woff'), 
+            /* src: url(fonts/nadia/nadia-serif.eot); */
+            src: url(fonts/nadia/nadia-serif.woff) format('woff'),   
                  url(fonts/nadia/nadia-serif.ttf) format('truetype'), 
                  url(fonts/nadia/nadia-serif.svg) format('svg');
         }
 
+        /* É recomendado dar suporte a woff, woff2 (para browsers super recentes) e ttf. Com isso já teremos um bom suporte. Os outros formatos são para browsers legado */
+
         /* Arquivos de fontes devem ser colocados no servidor, junto com os arquivos do site */
-        /* Recomendação de local para pegar fontes: font squirrel  */
+        /* Recomendação de local para pegar fontes: font squirrel e google fonts */
         
         html{
             font-family: nadia, arial;
