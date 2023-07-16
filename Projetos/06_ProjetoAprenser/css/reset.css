@@ -1,0 +1,73 @@
+/*
+    As tags html têm uma formatação padrão colocadas pelo browser. Então, mesmo não editando nada nelas, vemos que algumas
+    tags têm margem, outras tem padding, outras tem um tamanho maior ou menor...
+
+    O reset.css é uma técnica usada pelos desenvolvedores para resetar esses estilos. Assim, começamos nosso css literalmente
+    do ZERO, sem ter que zerar margens de parágrafos ou tirar os bullets das listas, por exemplo.
+*/
+
+/* 
+    Existem várias formas de vazer o reset do CSS, uma delas é a que temos abaixo.
+    Daí, colocamos esse código antes do nosso CSS ou importamos no HTML através da tag <link> 
+
+    Mas devemos lembrar que esse estilo deve ser adicionado ANTES do nosso, senão vai limpar nosso CSS
+*/
+
+*,
+*:after,
+*:before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Outra forma, que peguei da internet: */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
