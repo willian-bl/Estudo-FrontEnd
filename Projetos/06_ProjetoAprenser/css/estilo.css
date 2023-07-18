@@ -1,0 +1,187 @@
+/* ------------------------ Formatação geral ------------------------ */
+:root{
+    --primary-color: #fed001;
+}
+
+html{
+    /* font-size: 62.5%;  /* Agora 1rem vale 10px - É mais fácil para fazer contas e conversões */
+    /* font-family: 'Inter', sans-serif;
+    font-weight: 400;  */
+
+    /* font: font-weight font-size font-family */
+    font: 400 62.5% 'Inter', sans-serif;
+}
+
+p, a{
+    font-size: 1.6rem;
+}
+
+h1{
+    font-size: 4.8rem;
+}
+
+h2{
+    font-size: 4rem;
+}
+
+h3{
+    font-size: 3.2rem;
+}
+
+.upper{
+    text-transform: uppercase;
+}
+
+.wrapperContainer{
+    padding-top: 1px; /* Usamos isso para resolver o problema que faz com que como os títulos e outros elementos têm margin-top, ficamos com um "espaço sobrando" entre uma seção e outra. */
+    /* Colocando um padding de 1px no container, as propriedades do container já são aplicadas nesse espaço que sobra */
+}
+
+.wrapperContainer-dark{
+    background-color: #2a2a2a;
+    color: #fafafa;
+}
+
+.wrapperContainer-light{
+    background-color: #fafafa;
+}
+
+.wrapperContainer-dark2{
+    background-color: #003464;
+    color: #fafafa;
+}
+
+.container{
+    max-width: 127.6rem;
+    margin: auto;
+}
+
+.section_title{
+    margin: 0;
+    padding: 7rem 0;
+    text-align: center;
+}
+
+.btn{
+    background-color: var(--primary-color);
+    border-radius: 4px;
+    font-size: 1.8rem;
+    text-decoration: none;
+    padding: 1.6rem 4.6rem;
+    display: inline-block;
+    color: inherit
+}
+
+.section_btn{
+    margin: 7rem 0;
+}
+
+/* ------------------------ Header ------------------------ */
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--primary-color);
+    padding: 2rem 0;
+}
+
+/* .header_nav li{ */
+/*     display: inline-block; /* Também funciona para deixar os itens de navegação lado a lado, mas vamos usar flexbox para ter o mesmo efeito */
+/* } */
+
+.header_nav ul{
+    display: flex;
+    gap: .6rem;
+    list-style-type: none;
+}
+
+nav a{
+    color: inherit; /* Inherit é herdar... Herda o valor de uma propriedade do elemento pai ou daquele "ancestral" mais próximo que tem a propriedade definida */
+}
+
+.header_nav a{
+    padding: .75em 1.15em;  /* em está relacionado com o tamanho da fonte para a tag a, ou seja, 16px e não mais 10px da root */
+    border: solid 1px;
+    text-decoration: none;
+}
+
+.header_nav a:hover{
+    background-color: black;
+}
+
+/* ------------------------ Hero Banner ------------------------ */
+.wrapperContainer-hero{
+    background-image: linear-gradient(white, rgba(255, 255, 0, .6)); /* Para trabalhar com gradiente, sempre usamos background-image*/
+}
+
+.heroBanner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20rem;
+}
+
+.hero_title{
+    margin-bottom: 4rem;
+}
+
+/* ------------------------ Cursos ------------------------ */
+.cursos{
+    text-align: center;
+}
+
+.cursosContainer{
+    display: flex;
+    text-align: left;
+    gap: 2rem;
+}
+
+.curso_card{
+    /* border: 1px solid #aaa;
+    border-radius: 10px; */
+    /* overflow: hidden; /* Para que tudo o que passar da borda do cartão seja escondido */
+
+    /* flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0; */
+    flex: 1; /* Para deixar os cards do mesmo tamanho */
+}
+
+.curso_card img{
+    display: block;
+    width: 100%;
+}
+
+.curso_card h3{
+    font-size: 2.4rem;
+}
+
+.curso_card p{
+    font-size: 1.8rem;
+    line-height: 1.5;
+}
+
+.cursos_card_content{
+    padding: 1rem 1.25rem;
+    border: 1px solid #ccc;
+    border-radius: 0 0 8px 8px;
+    border-top: transparent;
+}
+
+/* ------------------------ Nossa escola ------------------------ */
+.escola{
+    display: flex;
+    justify-content: space-between;
+    gap: 6rem;
+    padding-top: 7rem;
+}
+
+.escola_title{
+    font-size: 3.2rem;
+    margin-top: 2rem;
+}
+
+.escola p{
+    font-size: 1.8rem;
+    line-height: 1.5;
+}
