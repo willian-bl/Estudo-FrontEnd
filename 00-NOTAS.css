@@ -115,7 +115,8 @@
         static -> Padrão. elementos aparecem na ordem em que são definidos no HTML
         relative -> Alteração de posição relativa à posição original do objeto. Porém, para os outros elementos, é como se ele ainda estivesse na posição original
         absotule -> Elemento se posiciona em relação ao primeiro objeto pai com position sem padrão (static)
-        fixed -> Sempre relacionado com a janela do browser; não se move quando scrollamos a página
+        fixed -> Sempre relacionado com a janela do browser; não se move quando scrollamos a página, mas o elemento sai do fluxo natural da página. Os outros elementos agem como se ele não estivesse ali
+        sticky -> Deixa os itens fixos na janela, como o position fixed, mas o elemento não sai do fluxo natural da página
         Obs: Para mover os elementos com position, usamos as propriedades top, right, left e bottom
     
     z-index -> Controla qual objeto será exibido, se sobrepondo um ao outro
