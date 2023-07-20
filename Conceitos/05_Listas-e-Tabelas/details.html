@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Details</title>
+
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        details { /* É interessante lembrar que o layout da tag details não pode ser alterado facilmente, é o browser que define seu estilo */
+            color: red;
+            background-color: #ccc;
+            margin-bottom: 1em;
+            padding: .5em;
+        }
+
+        details summary {
+            cursor: pointer;
+        }
+
+        details[open] {
+            background-color: aqua;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Curso web design</h1>
+    <details open>
+        <summary>Pré-requisitos</summary>
+        <p>Para fazer esse curso é necessário conhecimento de Sistema operacional</p>
+    </details>
+
+    <details>
+        <summary>Carga horária</summary>
+        <p>180 horas</p>
+    </details>
+
+
+</body>
+
+</html>
