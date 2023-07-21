@@ -29,10 +29,9 @@
 
         .formlogin fieldset{
             background-color: #ccc;
-        }
-
-        .formlogin legend{
-            background-color: white;
+            border-radius: 5px;
+            border: #777 1px solid;
+            box-shadow: 8px 8px 8px #333;
             font-weight: bold;
         }
 
@@ -42,14 +41,23 @@
             box-sizing: border-box;
             padding: 8px;
             border: none;
+            border-radius: 3px;
         }
 
         #user:focus, #pass:focus{
             background-color: azure;
+            outline: none;
         }
 
         .botao{
             margin-top: 15px;
+            width: fit-content;
+            margin-left: auto;
+            cursor: pointer;
+        }
+
+        .botao:hover{
+            background-color: #999;
         }
 
         #user{
@@ -64,7 +72,7 @@
     <body>
         <h1>Formulário de Login</h1>
 
-        <form action="#" method="post" class="formlogin"> <!-- Senhas NÃO devem ser passadas pelo get!!! -->
+        <form action="#" method="get" class="formlogin"> <!-- Senhas NÃO devem ser passadas pelo get - ISSO É APENAS UM TESTE!!! -->
             <fieldset>
                 <legend>Login</legend>
 
