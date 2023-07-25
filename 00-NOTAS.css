@@ -43,7 +43,16 @@
         p, h1 {...} formata todas as tags p E h1 com o mesmo formato
         li.classe {...} formata todas as tags li que tem a classe "classe"
         .classe > p {...} seleciona todas as tags p que são filhos DIRETOS de um elemento da classe "classe"
+        .teste[active] {...} seleciona todas as tags da classe .teste que possuem o atributo "active", independente do seu valor
         input[type="text"] {...} seleciona todas as tags input cujo atributo "type" seja text
+        a[href^="http://"] {...} seleciona todas as tags a que têm o atributo href começando com "http://"
+        img[src$=".png"] {...} seleciona todas as tags img que o atributo src termina com ".png"
+        h1 + p {...} seleciona a tag p que é irmã de h1 e vem imediatamente após o h1
+        h1 ~ p {...} seleciona TODAS as tags p que são irmãs diretas da tag h1 e vêm após a h1
+
+        2.1.1- Pseudo-classe not
+            Usamos quando queremos negar um seletor
+            Ex: p:not(.destaque) {...} Seleciona todas as tags p que NÃO tem a classe destaque
 
 3. ALGUMAS PROPRIEDADES BÁSICAS
     fonts
@@ -238,6 +247,7 @@
 
 6. PSEUDO-CLASSES
     Não dependem só das classes, mas também da interação com o usuário. Ex: Se o usuário clicou no link ou não, se o mouse está sobre um item etc
+    Dependem do ESTADO de um elemento
     Sintaxe:
         seletor:pseudoclasse {...} /* Não tem espaço entre o seletor e a pseudo-classe */
         a:link{...}
@@ -249,7 +259,13 @@
             a:hover{} Quando o usuário está com o mouse em cima do link
             a:active{} Quando o usuário está com o botão do mouse pressionado no link
 
-7. UNIDADES DE MEDIDA
+7. PSEUDO-ELEMENTOS
+    Formata uma "parte" do elemento, que não necessariamente dependem da interação do usuário para existir
+    Sintaxe:
+        seletor::pseudoelemento {...}
+        p::first-letter {...}
+
+8. UNIDADES DE MEDIDA
         px - Pixels -> Usar apenas para margens e paddings pequenos, esfumaçamentos etc. Evitar usar em width, height, tamanho de fontes etc
         
         em -> 1em é 16px, mas isso pode mudar de acordo com as configurações que o usuário usar no browser ou computador. Logo, em se adapta melhor a diferentes situações.
@@ -270,7 +286,49 @@
             
         *0 não tem unidade de medida. Pode ser 0em, 0% ou somente 0, dá na mesma  (isso só não é verdade quando trabalhamos com tempo. Nesses casos, devemos especificar a unidade: 0s ou 0ms)
 
-8. ANOTAÇÕES GERAIS
+9. RESPONSIVIDADE - Responsive Web Design (RWD)
+    Consiste em fazer páginas que se adaptem para visualização nos diferentes tipos de aparelhos que temos atualmente: smartphones, notebooks, computadores etc.
+    Diferentes dispositivos têm telas de diferentes tamanhos, diferentes resoluções, diferentes proporções etc. e devemos pensar nisso na hora de construir nossas páginas
+    
+    Declarar a tag meta "viewport" no início dos documentos passa a ser importante quando falamos de responsividade, pois ela faz com que seja levado em consideração o tamanho físico da tela ao invés da quantidade de pixels que ela tem (resolução)
+        
+    Possui 3 conceitos básicos: grid fluída; recursos flexíveis e consultas de mídia
+
+    9.1 - Consultas de mídia
+        9.1.1 - Media Type
+            Podemos utilizar um CSS para cada tipo de mídia, com o atributo media="" dentro da tag link no HTML
+            Ou em trechos de códigos HTML, especificando para qual dispositivo vale aquela formatação de CSS
+            Três tipos:
+                *screen: Tela grande (computadores)
+                *print: Na hora de imprimir a página (ou salvá-la como PDF)
+                *handheld: não é mais usado. Era para celulares de antigamente, mas hoje existem inúmeros tipos e tamanhos de telas de celulares e smartphones. Por isso fez-se necessário a criação das midia queries
+        
+        As media queries (ou consultas de mídia) são consultas das especificações da mídia em que a página web será exibida
+        Podemos consultar resolução (resolution), proporção (aspect-ratio), tamanho da viewport (min-width, max-width, min-height...) etc, juntamente com a media type
+
+        Sintaxe:
+            @media screen and (propriedade: valor) {
+                CSS comum aqui, que será aplicado quando essa consulta for satisfeita
+            }
+        Ex:
+            @media screen and (min-width: 720px) {...}
+    
+    9.2 - Recursos flexíveis
+        Usar recursos, imagens e elementos com valores flexíveis, como porcentagem e em
+        Não travar com valores em unidades de medida fixas, como pixels
+
+    9.3 - Grid Fluida
+        Edição de CSS feita em cima de uma grid com barras verticais, cuja quantidade de barras muda dependendo do tamanho da tela (para a grid ser fluida ela deve se adaptar em telas de diferentes tamanhos)
+        Toda a disposição e tamanho dos elementos respeitam essa grid.  
+        Podemos usar o grid nativo do CSS (ver seção [em construção]) ou frameworks/bibliotecas prontas, que disponibilizam classes que podemos implementar no HTML e o elemento já será formatado
+        
+    9.4 - Mobile First
+        Uma das abordagens muito utilizadas no quesito de responsividade é o mobile first: desenvolver a página para dispositivos móveis primeiro e depois adaptá-las para dispositivos com tela grande (computadores, notebooks etc) 
+        Isso porque é muito mais fácil criar uma página pensando em uma tela de um smartphone e adaptá-la para uma tela grande do que o contrário
+
+    
+
+10. ANOTAÇÕES GERAIS
     inhert -> herança
 
     margin: auto (Divide automaticamente o espaço na horizontal em tamanhos iguais para a esquerda e a direita, centralizando o elemento)
@@ -292,8 +350,12 @@
         E para usar:
         propriedade: var(--nome-da-variavel);
 
-9. SAIBA MAIS
+    lib, bibliotecas ou frameworks CSS são códigos com classes e formatações que já pegamos prontas para usar, sendo necessário apenas adicioná-las ao HTML para ter os efeitos desejados
+
+11. SAIBA MAIS
     https://css-tricks.com/ -> Site com dicas e sintaxe de CSS
     https://cubic-bezier.com/ -> Site para definir valores de cubic bezier
+    https://caniuse.com/ -> Site para pesquisar o suporte de recursos HTML e CSS nos diferentes browsers
+    https://getbootstrap.com/
 
     Pesquisar sobre padrão de nomenclatura "BEM" do CSS
