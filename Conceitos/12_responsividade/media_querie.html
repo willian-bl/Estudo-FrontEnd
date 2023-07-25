@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Esse é o padrão da tag meta viewport. A maioria dos desenvolvedores usam no cabeçalho dos seus HTML -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 
+        Essa tag fala que quando usamos propriedades de largura no css (width) esta largura, na verdade, está relacionada ao tamanho físico da tela do dispositivo. 
+        E initial-scale=1.0 define que o CSS não tenha nenhum zoom inicial.
+     -->
+
+    <style>
+        @media screen and (max-width: 500px) {
+            body {
+                background-color: brown;
+                color: white;
+            }
+        }
+
+
+        /* a {
+            color: inherit
+        } */
+
+        @media screen and (min-width: 600px) {
+            body {
+                background-color: blueviolet;
+            }
+        }
+
+        .teste {
+            width: 320px;
+            height: 80px;
+            background-color: darkorange;
+        }
+    </style>
+
+
+
+    <title>Media Querie</title>
+</head>
+
+<body class="only-print">
+
+    <h1>Media Querie</h1>
+
+    <a href="https://serliv.com" title="visite a página da Serliv">Serliv - cursos on-line</a>
+
+    <div class="teste">teste</div>
+
+</body>
+
+</html>
