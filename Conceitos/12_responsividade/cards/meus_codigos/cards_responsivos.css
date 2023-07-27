@@ -1,0 +1,23 @@
+:root{
+    font: 400 62.5% sans-serif;
+}
+
+h1{
+    font-size: 2.4rem;
+    text-align: center;
+}
+
+.card h2{
+    font-size: 2rem;
+}
+
+.card p{
+    font-size: 1.6rem;
+    color: rgb(231, 234, 238);
+}
+
+.card{
+    background-color: #999;
+    padding: 1em;
+    margin: 2em 1em;
+}

@@ -44,12 +44,14 @@ body {
     background-color: yellow;
 }
 
+/* container-type: inline-size; -> Faz com que o elemento seja tratado como um container no CSS e o inline-size faz com que a largura seja a base das media queries que faremos com esse container */
 /* .card_wrapper,
 main {
-    container-type: inline-size;
+    container-type: inline-size; 
 } */
 
 .card_wrapper {
+    /* Podemos escolher o nome de um container com o container-name (usamos esse nome quando formos fazer as media queries para ficar mais semântico e fácil de entender)*/
     /* container-name: cardWrapper; */
     container: cardWrapper / inline-size;
 }
@@ -57,10 +59,11 @@ main {
 main {
     /* container-name: main; */
     container: main / inline-size;
+    /* Atalho para definir um container: "container: apelido-do-container / inline-size;" */
 }
 
 /* @media screen and (min-width: 50em) { */
-@container cardWrapper (min-width: 50em) {
+@container cardWrapper (min-width: 50em) { /* O @container faz com que a seleção se refira ao container do elemento  */
     .card {
         flex-direction: row;
     }

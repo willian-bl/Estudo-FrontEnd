@@ -1,4 +1,5 @@
-@media screen and (min-width: 800px) and (orientation: landscape) {
+/* Break-point: Ponto em que o CSS muda o layout responsivo: de smartphone para tablet, para telas grandes etc */
+@media screen and (min-width: 800px) and (orientation: landscape) { 
     .cards_container {
         flex-direction: row;
     }

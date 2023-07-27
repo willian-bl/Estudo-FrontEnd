@@ -57,7 +57,8 @@
             font-size: 1.5rem;
         }
 
-        @media screen and (min-width: 53.75em) {
+        /* É interessante usar "em" nas medias queries porque assim as configurações de acessibilidade dos browser são levadas em conta na hora de calcular/consultar o tamanho, zoom e outras configurações da tela com as media queries */
+        @media screen and (min-width: 53.75em) {  
             body {
                 background-color: #7d7d7d;
             }
