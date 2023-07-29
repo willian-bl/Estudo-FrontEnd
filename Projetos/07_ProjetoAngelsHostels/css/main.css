@@ -6,11 +6,19 @@ html{
     font-family: sans-serif;
 }
 
+h1, 
+h2, 
+h3, 
+h4{
+    font-family: 'Oxygen', sans-serif;
+}
+
 .maxWidth{
     max-width: 64em;
     margin: auto;
 }
 
+/* -------------------- Header -------------------- */
 .top_header{
     text-align: center;
 }
@@ -22,6 +30,7 @@ html{
 .top_header_nav ul{
     list-style-type: none;
     padding: 0;
+    margin-bottom: 0;
 }
 
 .top_header_nav a{
@@ -36,7 +45,7 @@ html{
     background-color: color-mix(in srgb, var(--primary-color), white 10%);
 }
 
-@media screen and (min-width: 45em){
+@media screen and (min-width: 45em){ /* 720px */
     .top_header{
         display: flex;
         justify-content: space-between;
@@ -60,5 +69,107 @@ html{
 
     .top_header_nav a:hover{
         background-color: color-mix(in srgb, var(--primary-color), white 90%);
+    }
+}
+
+/* -------------------- Hero banner -------------------- */
+.heroBanner{
+    text-align: center;
+    background-color: #f6f6f6;
+    padding: 1em;
+}
+
+/* Obs: Quando temos um espaço entre duas divs e ele não vem de nenhuma delas (elas não tem margem) 
+esse espaço pode estar vindo da margem de algum elemento dentro de alguma das divs
+No nosso caso, o espaço entre o header e o hero banner vinha da ul que estava dentro do header */
+
+.heroBanner_iconPlay{
+    height: 5em;
+    width: 5em;
+    display: none;  /* Em telas mobile a imagem de play não aparece */
+}
+
+/* .heroBanner_iconPlay img{
+    width: 100%;
+} */
+
+.heroBanner_title{
+    color: var(--primary-color);
+    font-size: 1.5em;
+    margin: 1.5em 0;
+}
+
+.heroBanner_subtitle{
+    font-size: 1em;
+    color: color-mix(in srgb, var(--primary-color), white 20%);
+    line-height: 1.5em;
+}
+
+.heroBanner_btn{
+    display: inline-block;
+    padding: .9em 2em;
+    background-color: #58c4c4;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+}
+
+@media screen and (min-width: 45em) {
+    .heroBanner{
+        background-color: var(--primary-color);
+    }
+    
+    .heroBanner_title,
+    .heroBanner_subtitle{
+        color: white;
+    }
+
+    .heroBanner_iconPlay{
+        display: inline-block;
+    }
+}
+
+@media screen and (min-width: 56.25em) { /* 900px */
+    .heroBanner{
+        background-image: url(../images/bg_topo_1198x670.jpg);
+        aspect-ratio: 1198 / 670; /* Faz com que o container aumente ou diminua na proporção passada (que nesse caso é na mesma proporção do tamanho da imagem) */
+        
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+    }
+
+    .heroBanner .maxWidth{
+        margin: initial;
+        margin-bottom: 4em;
+        width: 75%;
+    }
+}
+
+@media screen and (min-width: 74em){ /* 1184px */
+    .heroBanner{
+        /* background-image: url(../images/bg_topo_1600x1374.jpg); */
+        background-image: linear-gradient(transparent, var(--primary-color)), url(../images/bg_topo_1600x1374.jpg); /* Colocando um gradiente por cima da imagem para melhorar a legibilidade do texto */
+        background-blend-mode: soft-light; /* Também ajuda a melhorar a visibilidade, trabalhando em conjunto com a cor que estamos colocando por cima da imagem de fundo */
+        background-position: center top;
+        background-color: var(--primary-color);
+        background-repeat: no-repeat;
+
+        max-height: 80vh;
+        width: 100%;
+        padding: 0;
+    }
+
+    .heroBanner .maxWidth{
+        width: 50%;
+    }
+
+    .heroBanner_iconPlay{
+        width: 7em;
+    }
+
+    .heroBanner_title,
+    .heroBanner_subtitle{
+        text-shadow: 4px 4px 2px rgba(0, 0, 0, .8);
     }
 }
