@@ -1,5 +1,16 @@
+
+/*
+GRID
+sm: 0       -> 0px
+md: 45em    -> 720px
+lg: 56.25em -> 900px
+xl: 74em    -> 1184px
+*/
+
 :root{
     --primary-color: #612674;
+    --background-light: #f6f6f6;
+    --default-grid-gap: 1rem;
 }
 
 html{
@@ -45,7 +56,8 @@ h4{
     background-color: color-mix(in srgb, var(--primary-color), white 10%);
 }
 
-@media screen and (min-width: 45em){ /* 720px */
+/* md */
+@media screen and (min-width: 45em){ 
     .top_header{
         display: flex;
         justify-content: space-between;
@@ -75,7 +87,7 @@ h4{
 /* -------------------- Hero banner -------------------- */
 .heroBanner{
     text-align: center;
-    background-color: #f6f6f6;
+    background-color: var(--background-light);
     padding: 1em;
 }
 
@@ -114,6 +126,7 @@ No nosso caso, o espaço entre o header e o hero banner vinha da ul que estava d
     border-radius: 5px;
 }
 
+/* md */
 @media screen and (min-width: 45em) {
     .heroBanner{
         background-color: var(--primary-color);
@@ -129,6 +142,7 @@ No nosso caso, o espaço entre o header e o hero banner vinha da ul que estava d
     }
 }
 
+/* lg */
 @media screen and (min-width: 56.25em) { /* 900px */
     .heroBanner{
         background-image: url(../images/bg_topo_1198x670.jpg);
@@ -146,6 +160,7 @@ No nosso caso, o espaço entre o header e o hero banner vinha da ul que estava d
     }
 }
 
+/* xl */
 @media screen and (min-width: 74em){ /* 1184px */
     .heroBanner{
         /* background-image: url(../images/bg_topo_1600x1374.jpg); */
@@ -171,5 +186,62 @@ No nosso caso, o espaço entre o header e o hero banner vinha da ul que estava d
     .heroBanner_title,
     .heroBanner_subtitle{
         text-shadow: 4px 4px 2px rgba(0, 0, 0, .8);
+    }
+}
+
+/* -------------------- Middle content -------------------- */
+.middleContent{
+    background-color: var(--background-light);
+    text-align: center;
+    padding: 2em;
+}
+
+.middleContent a{
+    color: inherit;
+    text-decoration: none;
+}
+
+.middleContent_title{
+    color: var(--primary-color);
+    text-transform: uppercase;
+    font-size: 1.25em;
+}
+
+.middleContent [class^="icon-"]{
+    color: var(--primary-color);
+    font-size: 3.5em;
+}
+
+.middleContent p{
+    line-height: 1.5;
+}
+
+/* -------------------- GRID -------------------- */
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--default-grid-gap);
+}
+
+.col{
+    flex: 1 0 auto;  /* Importante ser flex-grow 1 por causa da conta que estamos fazendo para calcular o tamanho das colunas depois */
+    width: 100%;
+}
+
+.col-sm-12{
+    width: 100%;
+}
+
+/* md */
+@media screen and (min-width: 45em){
+    .col-md-6{
+        width: calc(50% - var(--default-grid-gap));
+    }
+}
+
+/* xl */
+@media screen and (min-width: 74em) {
+    .col-xl-3{
+        width: calc(25% - var(--default-grid-gap));
     }
 }
